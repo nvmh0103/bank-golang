@@ -6,6 +6,12 @@ import (
 	"fmt"
 )
 
+// mock db
+type Store interface {
+	Querier
+	TransferTx(ctx context.Context, arg TransferTxParams) (TransferTxResult, error)
+}
+
 // Store defines all functions to execute db queries and transactions
 
 // SQLStore provides all functions to execute SQL queries and transactions
